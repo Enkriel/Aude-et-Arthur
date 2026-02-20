@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aude & Arthur</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --gold:#c6a85b;
+  --dark:#0f0f14;
+  --card:#1a1b22cc;
+  --light:#f5f3ed;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter", sans-serif;
+  background:url("fond.jpg") center/cover fixed;
+  color:var(--light);
+}
+
+.overlay{
+  background:linear-gradient(to bottom, rgba(15,15,20,0.80), rgba(15,15,20,0.85));
+  min-height:100vh;
+  padding:40px 20px;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  text-align:center;
+}
+
+h1{
+  font-family:"Cinzel", serif;
+  font-size:3.5rem;
+  letter-spacing:4px;
+  color:var(--gold);
+  margin-bottom:10px;
+  text-shadow:0 0 20px rgba(198,168,91,0.4);
+}
+
+.subtitle{
+  font-weight:300;
+  opacity:0.8;
+  margin-bottom:60px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid rgba(198,168,91,0.3);
+  border-radius:16px;
+  padding:40px;
+  margin-bottom:40px;
+  backdrop-filter:blur(6px);
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
+  transition:0.4s ease;
+}
+
+.card:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 60px rgba(198,168,91,0.3);
+}
+
+h2{
+  font-family:"Cinzel", serif;
+  color:var(--gold);
+  margin-bottom:25px;
+  font-weight:600;
+  letter-spacing:2px;
+}
+
+.program-item{
+  margin-bottom:20px;
+  font-size:1.1rem;
+}
+
+.label{
+  font-weight:500;
+  color:var(--gold);
+}
+
+.separator{
+  height:1px;
+  width:80px;
+  background:var(--gold);
+  margin:30px auto;
+  opacity:0.4;
+}
+
+.info-placeholder{
+  border:1px dashed rgba(198,168,91,0.4);
+  padding:30px;
+  margin-top:20px;
+  opacity:0.6;
+  font-style:italic;
+}
+
+footer{
+  margin-top:60px;
+  font-size:0.9rem;
+  opacity:0.5;
+}
+
+@media(max-width:768px){
+  h1{
+    font-size:2.5rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="overlay">
+  <div class="container">
+
+    <h1>Aude & Arthur</h1>
+    <p class="subtitle">Un nouveau chapitre commence</p>
+
+    <div class="card">
+      <h2>Le Programme</h2>
+
+      <div class="program-item">
+        <span class="label">14H — Mairie</span><br>
+        Rendez-vous à la mairie de Corps-Nuds
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="program-item">
+        <span class="label">Après la cérémonie</span><br>
+        Amanlis, chez Bastien & Léo
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Code Vestimentaire — Mairie</h2>
+      <p>
+        Petites Chemises cools.<br>
+        Le blanc reste reservé à la marié !
+      </p>
+
+      <div class="info-placeholder">
+        (Espace personnalisable pour ajouter précisions supplémentaires)
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pour Amanlis</h2>
+      <p>
+        • Objectif teuf et pas dose pour ce jour !<br>
+        • Plusieurs jeux prévu !!<br>
+        • Enorme son samer !!!
+      </p>
+
+      <div class="info-placeholder">
+        (Ajoute ici les choses spécifiques à ramener : boissons, tentes, plaid, etc.)
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Informations Complémentaires</h2>
+      <div class="info-placeholder">
+        Écris ici toutes les infos pratiques : hébergement, covoiturage, contact, RSVP, etc.
+      </div>
+    </div>
+
+    <footer>
+      Aude & Arthur — 2026
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
