@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aude & Arthur</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
   --violet:#a66cff;
   --rose:#f48fb1;
@@ -26,21 +25,28 @@
 
 body{
   font-family:"Poppins", sans-serif;
-  background:var(--beige);
+  background: url("fond1.jpg") no-repeat center center fixed;
+  background-size: cover;
   text-align:center;
   color:var(--text);
   padding:40px 20px;
 }
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(244,239,233,0.65); /* beige translucide */
+  z-index:-1;
+}
+
 @font-face {
   font-family: "LemonTuesday";
   src: url("lemon-tuesday.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 .container{
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
 }
 
@@ -57,7 +63,7 @@ h1{
 .subtitle{
   margin-top:10px;
   font-weight:300;
-  color: rgb(190, 48, 190);
+  color:rgb(190,48,190);
 }
 
 .date{
@@ -65,7 +71,16 @@ h1{
   font-size:3rem;
   color:var(--corail);
   margin:30px 0 60px 0;
-  font-weight:500;
+}
+
+/* CARD */
+
+.card{
+  background:white;
+  padding:50px 40px;
+  border-radius:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.05);
+  margin-bottom:60px;
 }
 
 /* PROGRAMME */
@@ -74,9 +89,8 @@ h1{
   display:flex;
   justify-content:center;
   align-items:flex-start;
-  gap:40px;
+  gap:50px;
   flex-wrap:wrap;
-  margin-bottom:60px;
 }
 
 .program-item{
@@ -94,30 +108,41 @@ h1{
   font-weight:500;
 }
 
-.vertical-line{
-  width:2px;
-  height:120px;
-  background:linear-gradient(var(--violet),var(--rose));
-  opacity:0.4;
+.icon{
+  height:170px;
+  object-fit:contain;
+  margin-bottom:20px;
 }
 
-/* LIEUX */
+.icon-ring{
+  height:150px;
+}
+
+.icon-boule{
+  transform:translateY(10px);
+}
+
+.vertical-line{
+  width:2px;
+  height:140px;
+  background:linear-gradient(var(--violet),var(--rose));
+  opacity:0.3;
+}
+
+/* SECTIONS */
+
+.section{
+  margin-bottom:40px;
+}
 
 .section-title{
   color:var(--corail);
-  margin:30px 0 10px 0;
   font-weight:600;
   letter-spacing:2px;
+  margin-bottom:10px;
 }
 
 .address{
-  margin-bottom:30px;
-}
-
-/* DRESS CODE */
-
-.dress{
-  margin-top:40px;
   font-size:0.95rem;
 }
 
@@ -142,51 +167,11 @@ footer{
   .vertical-line{
     display:none;
   }
-}
 
-.program{
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-  gap:40px;
-  flex-wrap:wrap;
-  margin-bottom:60px;
+  .program{
+    gap:30px;
+  }
 }
-
-.program-item{
-  width:220px;
-}
-
-.program{
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;  /* c’est correct */
-  gap:40px;
-  flex-wrap:wrap;
-  margin-bottom:60px;
-}
-
-.icon{
-  height:180px;          /* hauteur identique */
-  object-fit:contain;    /* garde les proportions */
-  margin-bottom:20px;
-}
-
-.vertical-line{
-  width:2px;
-  height:140px;
-  background:linear-gradient(var(--violet),var(--rose));
-  opacity:0.4;
-}
-
-.icon-boule{
-  transform: translateY(10px);
-}
-
-.icon-ring{
-  height:150px;
-}
-
 </style>
 </head>
 
@@ -198,46 +183,67 @@ footer{
   <p class="subtitle">vous invitent à célébrer leur union civile</p>
   <div class="date">le 30/05/2026</div>
 
-  <div class="program">
-
-  <div class="program-item">
-    <img src="Bague.png" alt="Bague" class="icon icon-ring">
-    <h3>Mariage civil à la mairie</h3>
-    <div class="time">• 13h45 •</div>
+  <div class="card">
+    <div class="section">
+      <div class="section-title">Le Concept</div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+      <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+      
+    </div>
   </div>
 
-  <div class="vertical-line"></div>
+  <div class="card">
+    <div class="section-title">Le Programme</div>
+    <div class="program">
+      <div class="program-item">
+        <img src="bague.png" alt="Bague" class="icon icon-ring">
+        <h3>Mariage civil à la mairie</h3>
+        <div class="time">• 13h45 •</div>
+      </div>
 
-  <div class="program-item">
-    <img src="champagne.png" alt="Champagne" class="icon">
-    <h3>Vin d'honneur et jeux</h3>
-    <div class="time">• 15h00 •</div>
+      <div class="vertical-line"></div>
+
+      <div class="program-item">
+        <img src="champagne.png" alt="Champagne" class="icon">
+        <h3>Vin d'honneur et jeux</h3>
+        <div class="time">• 15h00 •</div>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div class="program-item">
+        <img src="Boule.png" alt="Boule à facette" class="icon icon-boule">
+        <h3>Cocktail participatif et teuf</h3>
+        <div class="time">• 19h00 •</div>
+      </div>
+
+    </div>
   </div>
 
-  <div class="vertical-line"></div>
-
-  <div class="program-item">
-    <img src="Boule.png" alt="Boule à facette" class="icon icon-boule">
-    <h3>Cocktail participatif et teuf</h3>
-    <div class="time">• 19h00 •</div>
+  <div class="card">
+    <div class="section">
+      <div class="section-title">MAIRIE</div>
+      <div class="address">
+        123 Anywhere St., Any City, ST 12345
+      </div>
+    </div>
   </div>
 
-</div>
-
-  <div class="section-title">MAIRIE</div>
-  <div class="address">
-    123 Anywhere St., Any City, ST 12345
+  <div class="card">
+    <div class="section">
+      <div class="section-title">RÉCEPTION</div>
+      <div class="address">
+        123 Anywhere St., Any City, ST 12345
+      </div>
+    </div>
   </div>
 
-  <div class="section-title">RÉCEPTION</div>
-  <div class="address">
-    123 Anywhere St., Any City, ST 12345
-  </div>
-
-  <div class="dress">
-    <div class="section-title">BUFFET PARTICIPATIF POUR CEUX QUI LE PEUVENT</div>
-    Merci de porter vos plus belles couleurs !
-    <span class="highlight">Le blanc est réservé à la mariée</span>
+  <div class="card">
+    <div class="section">
+      <div class="section-title">BUFFET PARTICIPATIF</div>
+      Merci de porter vos plus belles couleurs !<br>
+      <span class="highlight">Le blanc est réservé à la mariée</span>
+    </div>
   </div>
 
   <footer>
