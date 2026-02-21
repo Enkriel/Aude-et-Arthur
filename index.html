@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aude & Arthur</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
 :root{
-  --violet:#a66cff;
+  --violet:#c56ae8;
   --rose:#f48fb1;
   --corail:#ff5e57;
   --orange:#ffa726;
@@ -23,26 +21,39 @@
   box-sizing:border-box;
 }
 
+/* LemonTuesday */
+@font-face {
+  font-family: "LemonTuesday";
+  src: url("lemon-tuesday.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gar";
+  src: url("gar.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kreon";
+  src: url("kreon.ttf") format("truetype");
+}
+
 body{
-  font-family:"Poppins", sans-serif;
+  font-family:"Kreon", serif;
   background: url("fond1.jpg") no-repeat center center fixed;
   background-size: cover;
   text-align:center;
   color:var(--text);
   padding:40px 20px;
+  font-size:1.15rem;              /* TEXTE PLUS GRAND */
+  line-height:1.7;                /* MEILLEURE LISIBILITÉ */
 }
 
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(244,239,233,0.65); /* beige translucide */
+  background:rgba(244,239,233,0.65);
   z-index:-1;
-}
-
-@font-face {
-  font-family: "LemonTuesday";
-  src: url("lemon-tuesday.otf") format("opentype");
 }
 
 .container{
@@ -54,106 +65,174 @@ body::before{
 
 h1{
   font-family:"LemonTuesday", cursive;
-  font-size:4.5rem;
-  background:linear-gradient(90deg,#3e25ad, #bb569d, #ff9735);
+  font-size:4.3rem;
+  background:linear-gradient(90deg,#9255f6,#9255f6,#9255f6, #9255f6,#a861d3, #bb6cb7,#d37992, #fb8f53,#e9856f, #e9856f,#9255f6);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  margin-bottom: -20px;
 }
 
 .subtitle{
-  margin-top:10px;
-  font-weight:300;
-  color:rgb(190,48,190);
+  font-family:"LemonTuesday";
+  font-size:1.8rem;
+  color: #a861d3;
+  margin-top: 0;
 }
 
 .date{
   font-family:"LemonTuesday", cursive;
-  font-size:3rem;
-  color:var(--corail);
+  font-size:2.5rem;
+  color:#d37992;
   margin:30px 0 60px 0;
 }
 
 /* CARD */
 
 .card{
-  background:white;
-  padding:50px 40px;
+  background:rgb(243, 233, 225);
+  padding:30px 40px 50px 40px;
   border-radius:25px;
   box-shadow:0 15px 35px rgba(0,0,0,0.05);
-  margin-bottom:60px;
+  margin-bottom:50px;
+}
+
+/* SUPPRESSION ESPACE CONTEXTE */
+.section{
+  margin-bottom:0;
 }
 
 /* PROGRAMME */
-
+/* PROGRAMME */
 .program{
   display:flex;
   justify-content:center;
-  align-items:flex-start;
   gap:50px;
   flex-wrap:wrap;
+  margin-top:30px;
 }
 
+/* Chaque item s’adapte automatiquement */
 .program-item{
   width:220px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
 }
 
+/* Titres sous icône */
 .program-item h3{
-  font-size:1rem;
-  font-weight:500;
-  margin-bottom:10px;
+  font-size:1.25rem;
+  margin:10px 0 0 0;
+  text-align:center;
 }
 
+/* Horaires */
 .time{
-  color:var(--corail);
-  font-weight:500;
+  font-size:1.1rem;
+  margin-top:5px;
 }
 
-.icon{
-  height:170px;
-  object-fit:contain;
-  margin-bottom:20px;
-}
-
-.icon-ring{
-  height:150px;
-}
-
-.icon-boule{
-  transform:translateY(10px);
-}
-
+/* Lignes verticales */
 .vertical-line{
   width:2px;
-  height:140px;
+  height:180px;
   background:linear-gradient(var(--violet),var(--rose));
   opacity:0.3;
 }
 
-/* SECTIONS */
-
-.section{
-  margin-bottom:40px;
+/* Icônes */
+.icon{
+  height:150px;
+  width:150px;
+  object-fit:contain;
+  display:block;
+  margin-bottom:10px; /* espace entre icône et texte */
 }
 
+/* Icône champagne */
+.icon-champagne {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Icône bague */
+.icon-ring {
+  height: 160px;
+  width: 170px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+/* Texte spécifique pour la boule pour rester aligné */
+.texte-boule{
+  margin-top:0;
+}
+
+/* Texte sous icône : alignement parfait */
+.program-text {
+  font-size: 1.25rem;
+  margin: 10px 0 0 0;
+  text-align: center;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:var(--violet);
+}
+
+
+/* Boule seulement +20px */
+.icon-boule{
+  height:190px;  /* 150 + 20px */
+  width:190px;
+  object-fit: contain;
+  display: block;
+  margin-bottom:0;  /* on enlève l’espace par défaut */
+}
+
+/* SECTIONS */
+
 .section-title{
-  color:var(--corail);
-  font-weight:600;
+  background:linear-gradient(90deg,#d8471b,#db4e15, #ce462e, #dd641d,#dd641d,#dd641d);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  text-align:center;
+  background-position:center;
   letter-spacing:2px;
-  margin-bottom:10px;
+  margin-bottom:15px;
+  font-size:2rem;
+}
+
+.section-title-old{
+  background:linear-gradient(90deg,#e39beb,#e39beb, #ee9e6c, #ee6ca2,#be48de,#be48de);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  text-align:center;
+  background-position:center;
+  letter-spacing:2px;
+  margin-bottom:15px;
+  font-size:2rem;
 }
 
 .address{
-  font-size:0.95rem;
+  font-size:1.1rem;
 }
 
 .highlight{
-  color:var(--rose);
-  font-weight:500;
+  color: #5f3b4d;
 }
 
 footer{
-  margin-top:60px;
-  font-size:0.8rem;
+  margin-top:40px;
+  font-size:0.9rem;
   opacity:0.6;
 }
 
@@ -169,8 +248,20 @@ footer{
   }
 
   .program{
-    gap:30px;
+    gap:40px;
   }
+}
+
+/* Liste centrée dans une section */
+.section ul {
+  display: inline-block;
+  text-align: left;
+  margin: 16px auto;
+  padding-left: 24px;
+}
+.section li {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
 }
 </style>
 </head>
@@ -180,69 +271,106 @@ footer{
 <div class="container">
 
   <h1>Aude & Arthur</h1>
-  <p class="subtitle">vous invitent à célébrer leur union civile</p>
-  <div class="date">le 30/05/2026</div>
+  <p class="subtitle">union civile</p>
+  <div class="date"><b>le 30/05/2026</b></div>
 
   <div class="card">
     <div class="section">
-      <div class="section-title">Le Concept</div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
-      <span class="highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
-      
+      <div class="section-title">Un peu de contexte</div>
+      <span class="highlight">Nous avons décidé de célébrer notre mariage en deux temps : un premier temps en 2026, 
+      pour l’union civile, sans chichi, sans grande salle, sans vrai traiteur sans trop de sous mais avec par contre 
+      beaucoup d’amour, de personnes qu’on aime, de fun et de jeux !
+      Et puis on espère faire dans un an ou deux, lorsqu’on aura un peu plus de budget un mariage sûrement 
+      un peu plus conventionnel mais qui restera à notre image.</span><br>
     </div>
   </div>
 
   <div class="card">
     <div class="section-title">Le Programme</div>
     <div class="program">
-      <div class="program-item">
-        <img src="bague.png" alt="Bague" class="icon icon-ring">
-        <h3>Mariage civil à la mairie</h3>
+      <div class="program-item" style="justify-content: flex-end;">
+        <img src="bague.png" alt="Bague" class="icon-ring">
+        <h3 class="program-text">Mariage civil à la mairie</h3>
         <div class="time">• 13h45 •</div>
       </div>
 
       <div class="vertical-line"></div>
 
-      <div class="program-item">
-        <img src="champagne.png" alt="Champagne" class="icon">
-        <h3>Vin d'honneur et jeux</h3>
-        <div class="time">• 15h00 •</div>
+      <div class="program-item" style="justify-content: flex-end;">
+        <img src="champagne.png" alt="Champagne" class="icon-champagne">
+        <h3 class="program-text">Vin d'honneur et jeux</h3>
+        <div class="time">• 15h15 •</div>
       </div>
 
       <div class="vertical-line"></div>
 
-      <div class="program-item">
-        <img src="Boule.png" alt="Boule à facette" class="icon icon-boule">
-        <h3>Cocktail participatif et teuf</h3>
+      <div class="program-item" style="justify-content: flex-end;">
+        <img src="Boule.png" alt="Boule à facette" class="icon-boule">
+        <h3 class="program-text texte-boule">Cocktail participatif</h3>
         <div class="time">• 19h00 •</div>
       </div>
-
     </div>
   </div>
 
   <div class="card">
     <div class="section">
-      <div class="section-title">MAIRIE</div>
+      <div class="section-title">Buffet Participatif</div>
+      <span class="highlight">Le buffet se déroulera en deux temps : 
+      Un vin d’honneur qui aura la forme d’un buffet sucré, durant lequel nous vous proposerons soupe de champagne et tireuse à bière Ste Colombe.
+      Puis un cocktail dînatoire : nous avons prévu environ 500 pièces coktail + un gros Dhal à côté.
+
+      Pour ce buffet, nous avons besoin de vous ! En effet, nous serons une grosse trentaine, c’est pourquoi pour ceux qui sont le plus près et qui le peuvent, ce serait merveilleux que vous puissiez ramener de quoi grignoter ou boire.
+      Un google doc se prépare pour pouvoir organiser tout cela au mieux !
+      </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section">
+      <div class="section-title">Dress code : un seul mot coloré !</div>
+      <span class="highlight">
+        C’est bien évidemment le moment de vous faire beau, si possible en portant de la couleur, merci de laisser le blanc à la mariée 😉
+      </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section">
+      <div class="section-title">La réception</div>
+      <span class="highlight">
+        
+        La réception se déroule chez Léo et Bastien qui ont très gentiment accepté de nous prêter leur belle maison.
+        La réception se déroulera après la mairie en 4  temps : 
+        <br>
+        <ul>
+          <li>Un vin d’honneur accompagné d’une séance photo</li>
+          <li>Suivit de jeux organisés par vos mariés préférés</li>
+          <li>Puis un cocktail dînatoire</li>
+          <li>Pour finir avec une giga teuf pour kiffer tous ensemble (avec possibilité de Karaoké) !
+        En plus on aura des lots à gagner, un photobooth, des tatouages… plein de surprises !</li>
+        </ul>
+      </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section">
+      <div class="section-title">Hébergement</div>
+      <span class="highlight">
+        Possibilité de dormir sur place, en dortoirs.
+        Google doc à venir
+      </span>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="section">
+      <div class="section-title">Info Pratique</div>
       <div class="address">
-        123 Anywhere St., Any City, ST 12345
+        <span class="highlight"><b>Adresse Mairie</b> : 31 rue des Trois Marie, 35150 Corps Nuds<br>
+        <b>Adresse Recepetion</b> : 4 Le Val, 35150 Amanlis<br><br></span>
       </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="section">
-      <div class="section-title">RÉCEPTION</div>
-      <div class="address">
-        123 Anywhere St., Any City, ST 12345
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="section">
-      <div class="section-title">BUFFET PARTICIPATIF</div>
-      Merci de porter vos plus belles couleurs !<br>
-      <span class="highlight">Le blanc est réservé à la mariée</span>
     </div>
   </div>
 
